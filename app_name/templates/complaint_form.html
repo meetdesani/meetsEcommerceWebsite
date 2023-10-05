@@ -1,0 +1,58 @@
+{% extends "header.html" %}
+{% block content %}
+<body>
+    <br>
+    {% if msg %}
+    <div class="alert alert-success" role="alert">
+        {{msg}}
+    </div>
+    {% endif %}
+    {% if msgred %}
+    <div class="alert alert-danger" role="alert">
+        {{msgred}}
+    </div>
+    {% endif %}
+    <br>
+    <div class="container cnt-form">
+        <h2 class="display-4 margin-bottom">Complaint Form</h2>
+        <br>
+        <form method="post" name="complaint_form" action="{% url 'complaint_form' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input name="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your name here...">
+            </div>
+            <br>
+            <select name="seller" class="form-select" aria-label="Default select example">
+                <option selected>Seller</option>
+                {% for i in seller_key %}
+                <option value="{{i.email}}">{{ i.fname }} {{ i.lname }} | {{ i.email }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <select name="product" class="form-select" aria-label="Default select example">
+                <option selected>Products</option>
+                {% for i in product_key %}
+                <option value="{{ i.product_brand }} | {{ i.product_model }}">{{ i.product_brand }} | {{ i.product_model }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input name="email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Complain</label>
+                <textarea name="complaint" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your complaint here..."></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <br>
+</body>
+{% include 'footer.html' %}
+{% endblock %}

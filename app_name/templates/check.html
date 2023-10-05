@@ -1,0 +1,40 @@
+<head>
+    <style>
+        .carousel{
+            height: 250px;
+            width: 80%;
+            position: relative;
+        }
+        .carousel .switchLeft,
+        .carousel .switchRight{
+            color: white;
+            font-weight: bold;
+            height: 100%;
+            width: 45px;
+            line-height: 250px;
+            font-size: 25px;
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+            top: 0%;
+            z-index: 3;
+        }
+        .carousel .switchLeft{
+            position: absolute;
+            left: -50px;
+        }
+        .carousel .switchRight{
+            position: absolute;
+            right: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carolusel">
+        <div class="caroluselbox">
+            <!-- rendom data-->
+        </div>
+        <a class="switchLeft slidButton"></a>
+        <a class="switchRight slidButton"></a>
+        <script src="{% static 'js/slider.js' %}"></script>
+    </div>
+</body>

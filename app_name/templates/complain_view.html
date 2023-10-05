@@ -1,0 +1,72 @@
+{% extends "header.html" %}
+{% block content %}
+<body>
+    {% if msg %}
+    <div class="alert alert-success text-center" role="alert">
+        {{msg}}
+    </div>
+    {% endif %}
+    {% if msgred %}
+    <div class="alert alert-danger text-center" role="alert">
+        {{msgred}}
+    </div>
+    {% endif %}
+    <section>
+        <div class="container py-5">
+            <h2 class="display-4">Complain</h2>
+            <br>
+            <div class="row">
+                {% for i in complaint reversed %}
+                <div class="container">
+                    <section class="mx-auto my-5" style="max-width: 60rem;">
+                      <div class="card">
+                        <div class="card-body">
+                          <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+                            <div class="blockquote-custom-icon bg-info shadow-1-strong">
+                                <i class="fa text-white" title="Complaint ID: {{ i.id }}">{{ i.id }}</i>
+                            </div>
+                            <p class="mb-0 mt-2 font-italic">
+                                {{ i.created_at }}
+                            </p>
+                            <p class="mb-0 mt-2 font-italic">
+                                Product: {{ i.product }}
+                            </p>
+                            <br>
+                            <p class="mb-0 mt-2 font-italic">
+                                Complaint:
+                            </p>
+                            <p class="mb-0 mt-2 font-italic">
+                              {{ i.complaint }}
+                            </p>
+                            <br>
+                            <p>
+                                <a href="mailto:{{i.email}}" class="text-info">
+                                    <button class="btn btn-primary">
+                                        <i class="fa-solid fa-envelope logo-space-left"></i>
+                                        Mail Responde
+                                    </button>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="{% url 'delete_complaint' i.id %}" class="text-info">
+                                    <button class="btn btn-danger">
+                                        <i class="fa-solid fa-xmark logo-space-left"></i>
+                                        Remove Complient
+                                    </button>
+                                </a>
+                            </p>
+                            <footer class="blockquote-footer pt-4 mt-4 border-top">
+                              Complainer
+                              <cite title="Source Title">{{i.name}} | {{i.email}}</cite>                            </footer>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+{% include 'footer.html' %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "header.html" %}
+{% block content %}
+<BODY>
+    <BR>
+    <div class="container room-room">
+        <div class="row">
+            <div class="col-md-6 footer-left-part card-center">
+                <div class="card text-center">
+                    <div class="card-header">
+                        {{product.product_brand}}  {{product.product_model}}
+                    </div>
+                    <div class="card-body">
+                        <img class="image product-image card-img-top" src="{{ product.product_image.url }}" alt="Product Image" />
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Description</h5>
+                            <p class="card-text">{{ product.product_desc }}</p>
+                            <h5 class="card-title">Price</h5>
+                            <p class="card-text">INR {{ product.product_price }}</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="{% url 'seller_edit_product' product.id %}">
+                                    <button type="button" class="btn btn-outline-dark first-button-radius">
+                                        <i class="fa-solid fa-pen-to-square logo-space-left"></i>
+                                        <span>Edit Product</span>
+                                    </button>
+                                </a>
+                                <a href="{% url 'seller_delete_product' product.id %}">
+                                    <button type="button" class="btn btn-outline-dark middle-button-radius">
+                                        <i class="fa-solid fa-trash-can logo-space-left"></i>
+                                        <span>Delete Product</span>
+                                    </button>
+                                </a>
+                                <a href="{% url 'seller_view_product' %}">
+                                    <button type="button" class="btn btn-outline-dark last-button-radius">
+                                        <i class="fa-solid fa-delete-left logo-space-left"></i>
+                                        <span class="marginright10px">Go Back
+                                        </span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</BODY>
+{% include 'footer.html' %}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "header.html" %}
+{% block content %}
+</body>
+     {% if msg %}
+    <div class="alert alert-success" role="alert">
+        {{msg}}
+    </div>
+    {% endif %}
+    {% if msgred %}
+    <div class="alert alert-danger" role="alert">
+        {{msgred}}
+    </div>
+    {% endif %}
+    <br>
+    <div class="container cnt-form">
+        <h2 class="display-4">Seller's Log In</h2>
+        <br>
+        <form method="post" name="seller_login" action="{% url 'seller_login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email Address</label>
+                <input name="email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@domain.com">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Password</label>
+                <input name="password" type="text" class="form-control" id="exampleFormControlInput1" placeholder="*******">
+            </div>
+            <br>
+            <div>
+                Not Registered?
+                <a href="{% url 'signup' %}">
+                     Sign Up
+                </a>
+                here.
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <br>
+</body>
+{% include 'footer.html' %}
+{% endblock %}

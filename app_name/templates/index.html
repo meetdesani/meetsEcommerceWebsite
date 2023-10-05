@@ -1,0 +1,209 @@
+{% extends "header.html" %}
+{% block content %}
+{% load static %}
+<body>
+  <br>
+  <div class="container">
+  </div>
+  <br>
+    {% if msg %}
+    <div class="alert alert-success" role="alert">
+        {{msg}}
+    </div>
+    {% endif %}
+    {% if msgred %}
+    <div class="alert alert-danger" role="alert">
+        {{msgred}}
+    </div>
+    {% endif %}
+    <br>
+      <div class="container">
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'images/1.png' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Best Buy</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/2.png' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Apple</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/3.png' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Samsung</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/4.png' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Dell</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/5.png' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Lenovo</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/6.png' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Google</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/7.png' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>FitBit</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    <br>
+    {% if request.session.email %}
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6 footer-left-part">
+            <h2 class="display-4 text-align-center">
+              Buy
+              <br>herE
+            </h2>
+            <br>
+            <p>
+              "Buy Here" is a dynamic and visually appealing e-commerce website designed 
+              and developed by me to showcase my web development skills. With a user-friendly 
+              interface and a seamless shopping experience, "Buy Here" offers a wide range of 
+              products catering to diverse customer needs. The website features an intuitive 
+              navigation system, a secure payment gateway, and a responsive design, ensuring 
+              that customers can easily browse, select, and purchase their desired items from 
+              any device. Attention to detail and a focus on user experience are at the core of 
+              this project, making "Buy Here" a testament to my proficiency in web development 
+              and my commitment to delivering top-notch online shopping experiences.
+              <br>
+              <br>
+              - regards, Meet.
+            </p>
+          </div>
+          <br>
+          <div class="col-md-6 footer-left-part">
+            <div class="centered-content">
+              <img src="{% static 'images/mobile_jeans.jpg'%}" class="img-fluid img-jeans" alt="...">
+            </div>
+          </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6 footer-left-part">
+            <div class="centered-content">
+              <img src="{% static 'images/google_assistant.webp'%}" class="img-fluid img-jeans" alt="...">
+            </div>
+          </div>
+          <div class="col-md-6 footer-left-part">
+            <h2 class="display-4 text-align-center">
+              GooglE
+              <br>Assistant
+            </h2>
+            <br>
+            <p>
+              Google Assistant is your virtual companion, always ready to assist you in navigating the digital world. Whether you need to set reminders, check the weather, send messages, or get answers to your burning questions, Google Assistant is at your service. With its natural language processing capabilities, it understands your voice commands and provides helpful responses, making your daily tasks more convenient and efficient. Whether you're at home, on the go, or using a smart device, Google Assistant is there to simplify your life, delivering information and assistance when and where you need it. It's your personal AI-powered assistant, designed to make your life easier and more connected.
+              <br>
+              <br>
+              <a href="{% url 'user_product_details' 27 %}">
+                <button type="button" class="btn btn-primary">Details</button>
+              </a>
+            </p>
+          </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6 footer-left-part">
+            <h2 class="display-4 text-align-center">
+              iPhone
+              <br>15
+            </h2>
+            <br>
+            <p>
+              Introducing the iPhone 15 – the pinnacle of innovation in the world of smartphones. This remarkable device seamlessly combines cutting-edge technology with elegant design, offering an unparalleled user experience. With its stunning 6.7-inch Super Retina XDR display, every image and video comes to life with vibrant colors and sharp clarity. The iPhone 15 boasts the most advanced A15X Bionic chip, ensuring lightning-fast performance and unparalleled efficiency. Capture your moments in extraordinary detail with the enhanced triple-lens camera system, featuring AI-powered photography for stunning shots in any lighting condition. Stay connected like never before with 5G connectivity, allowing for lightning-fast downloads and seamless streaming. Your security and privacy are paramount, thanks to Face ID, the most secure facial recognition technology in a smartphone. The iPhone 15 is not just a phone; it's a statement of style, power, and innovation. Elevate your mobile experience with the iPhone 15 – the future is in your hands.
+              <br>
+              <br>
+              <a href="{% url 'user_product_details' 28 %}">
+                <button type="button" class="btn btn-primary">Details</button>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-6 footer-left-part">
+            <div class="centered-content">
+              <img src="{% static 'images/iphone15-2.jpg'%}" class="img-fluid img-jeans" alt="...">
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6 footer-left-part">
+            <div class="centered-content">
+              <img src="{% static 'images/dellg3.jpg'%}" class="img-fluid img-jeans" alt="...">
+            </div>
+          </div>
+          <div class="col-md-6 footer-left-part">
+            <h2 class="display-4 text-align-center">
+              Dell
+              <br>G3
+            </h2>
+            <br>
+            <p>
+              Google Assistant is your virtual companion, always ready to assist you in navigating the digital world. Whether you need to set reminders, check the weather, send messages, or get answers to your burning questions, Google Assistant is at your service. With its natural language processing capabilities, it understands your voice commands and provides helpful responses, making your daily tasks more convenient and efficient. Whether you're at home, on the go, or using a smart device, Google Assistant is there to simplify your life, delivering information and assistance when and where you need it. It's your personal AI-powered assistant, designed to make your life easier and more connected.
+              <br>
+              <br>
+              <a href="{% url 'user_product_details' 10 %}">
+                <button type="button" class="btn btn-primary">Details</button>
+              </a>
+            </p>
+          </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    {% else %}
+    <p style="text-align: center;"><a href="{% url 'login' %}" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Log In to Browse</a></p>
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+{% include 'footer.html' %}
+{% endblock %}
